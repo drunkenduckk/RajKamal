@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajkamal by Dulha Dulhan - Exclusive Designer Wear</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-bg: #1A1A1A;
+            --secondary-bg: #222222;
+            --text-light: #F0F0F0;
+            --muted-text: #AAAAAA;
+            --accent-color: #A38C5F;
+            --accent-soft: #3A3121;
+            --whatsapp-green: #25D366;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Poppins', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--text-light);
+            background-color: var(--primary-bg);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--text-light);
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(26, 26, 26, 0.95);
+            border-bottom: 1px solid #333;
+            backdrop-filter: blur(8px);
+        }
+
+        .navbar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            flex-direction: column;
+            letter-spacing: 4px;
+        }
+
+        .nav-logo-main {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .nav-logo-sub {
+            font-size: 0.7rem;
+            color: var(--muted-text);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 400;
+            color: var(--muted-text);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-cta {
+            font-size: 0.8rem;
+            padding: 8px 16px;
+            border-radius: 2px;
+            border: 1px solid var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-cta:hover {
+            background: var(--accent-color);
+            color: var(--primary-bg);
+        }
+
+        /* HERO */
+        header.hero {
+            padding: 120px 20px 80px;
+            background: radial-gradient(circle at top, #333 0, #111 55%);
+            text-align: left;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-text-eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        header h1 {
+            font-family: var(--font-serif);
+            font-size: 3.4rem;
+            margin: 0 0 10px;
+        }
+
+        header .hero-subbrand {
+            font-size: 1rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--muted-text);
+            margin-bottom: 18px;
+        }
+
+        .hero-description {
+            font-size: 0.95rem;
+            color: var(--muted-text);
+            max-width: 500px;
+            margin-bottom: 24px;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 28px;
+        }
+
+        .hero-badge {
+            border: 1px solid #333;
+            padding: 6px 10px;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn-primary,
+        .btn-outline,
+        .btn-whatsapp {
+            display: inline-block;
+            padding: 10px 22px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 2px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: var(--primary-bg);
+        }
+
+        .btn-primary:hover {
+            background: #bfa87a;
+        }
+
+        .btn-outline {
+            border: 1px solid #444;
+            color: var(--text-light);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-color);
+        }
+
+        .hero-side-panel {
+            border-left: 1px solid #333;
+            padding-left: 24px;
+        }
+
+        .hero-side-panel h3 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .hero-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 16px;
+            font-size: 0.9rem;
+            color: var(--muted-text);
+        }
+
+        .hero-list li {
+            margin-bottom: 6px;
+        }
+
+        .hero-note {
+            font-size: 0.8rem;
+            color: #777;
+        }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            font-family: var(--font-serif);
+            font-size: 2.1rem;
+            margin: 60px 0 10px;
+            color: var(--accent-color);
+            position: relative;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--muted-text);
+            margin-bottom: 30px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 1px;
+            background: var(--text-light);
+            margin: 10px auto 0;
+        }
+
+        /* CATEGORY CARDS (MEN / WOMEN / BRIDAL) */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .category-card {
+            background: var(--secondary-bg);
+            padding: 18px 18px 20px;
+            border-radius: 2px;
+            border: 1px solid #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 180px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            border-color: var(--accent-color);
+        }
+
+        .category-label {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--muted-text);
+            margin-bottom: 6px;
+        }
+
+        .category-name {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .category-desc {
+            font-size: 0.85rem;
+            color: var(--muted-text);
+            margin-bottom: 14px;
+        }
+
+        .category-meta {
+            font-size: 0.78rem;
+            color: #888;
+        }
+
+        /* PRODUCT GRID */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 26px;
+        }
+
+        .product-item {
+            background: var(--secondary-bg);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: box-shadow 0.3s, transform 0.2s;
+        }
+
+        .product-item:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            transform: translateY(-3px);
+        }
+
+        .product-item img {
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+            opacity: 0.85;
+            transition: opacity 0.3s;
+        }
+
+        .product-item:hover img {
+            opacity: 1;
+        }
+
+        .product-details {
+            padding: 18px 18px 20px;
+            text-align: left;
+        }
+
+        .product-details h3 {
+            margin: 0 0 6px;
+            font-size: 1.1rem;
+            color: var(--accent-color);
+        }
+
+        .product-details p {
+            font-size: 0.85rem;
+            color: var(--muted-text);
+            margin-bottom: 10px;
+        }
+
+        .product-meta {
+            font-size: 0.8rem;
+            color: #777;
+            margin-bottom: 12px;
+        }
+
+        .btn-whatsapp {
+            background-color: var(--accent-color);
+            color: var(--primary-bg) !important;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #bfa87a;
+        }
+
+        /* WHY RAJKAMAL (FEATURES) */
+        .features-strip {
+            margin: 60px 0 30px;
+            padding: 18px 20px;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-item {
+            font-size: 0.85rem;
+            color: var(--muted-text);
+        }
+
+        .feature-title {
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            color: var(--text-light);
+        }
+
+        /* SERVICES SECTION */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+            margin-bottom: 50px;
+        }
+
+        .service-card {
+            background: var(--secondary-bg);
+            padding: 18px 18px 22px;
+            border-radius: 2px;
+            border: 1px solid #333;
+        }
+
+        .service-title {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+            color: var(--accent-color);
+        }
+
+        .service-desc {
+            font-size: 0.85rem;
+            color: var(--muted-text);
+            margin-bottom: 10px;
+        }
+
+        .service-note {
+            font-size: 0.78rem;
+            color: #777;
+        }
+
+        /* TESTIMONIALS */
+        .testimonials {
+            margin-bottom: 60px;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+        }
+
+        .testimonial-card {
+            background: #171717;
+            border: 1px solid #333;
+            padding: 16px 18px 18px;
+            font-size: 0.85rem;
+            color: var(--muted-text);
+        }
+
+        .testimonial-quote {
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .testimonial-name {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-color);
+        }
+
+        /* GALLERY / INSTAGRAM STRIP */
+        .gallery-strip {
+            margin-bottom: 60px;
+        }
+
+        .gallery-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 10px;
+        }
+
+        .gallery-tile {
+            background: #222;
+            height: 130px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 2px;
+            border: 1px solid #333;
+        }
+
+        .gallery-tile span {
+            position: absolute;
+            left: 10px;
+            bottom: 8px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 3px 6px;
+        }
+
+        /* Floating WhatsApp Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 22px;
+            right: 22px;
+            background-color: var(--accent-color);
+            color: var(--primary-bg) !important;
+            padding: 12px 20px;
+            border-radius: 2px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.45);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid var(--accent-color);
+            transition: background-color .25s ease, box-shadow .25s ease, transform .2s ease;
+        }
+
+        .floating-whatsapp:hover {
+            background-color: var(--accent-color-hover);
+            color: #ffffff !important;
+            /* ← makes text white on hover */
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+        }
+
+
+        .whatsapp-icon {
+            font-size: 1.1rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--secondary-bg);
+            color: #aaa;
+            padding: 50px 20px 30px;
+            margin-top: 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.3fr);
+            gap: 40px;
+        }
+
+        footer h3 {
+            color: var(--accent-color);
+            font-family: var(--font-sans);
+            font-size: 1.1rem;
+            margin-bottom: 18px;
+            letter-spacing: 1px;
+        }
+
+        footer p,
+        footer a {
+            color: #aaa;
+            margin: 6px 0;
+            font-weight: 300;
+            font-size: 0.85rem;
+        }
+
+        .contact-info strong {
+            display: block;
+            color: var(--text-light);
+            margin-bottom: 2px;
+            font-size: 0.85rem;
+        }
+
+        .map-container {
+            margin-top: 10px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 300px;
+            border: 1px solid #333;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            margin-top: 28px;
+            padding-top: 12px;
+            font-size: 0.75rem;
+            color: #777;
+            text-align: center;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-side-panel {
+                border-left: none;
+                border-top: 1px solid #333;
+                padding-left: 0;
+                padding-top: 20px;
+            }
+
+            header.hero {
+                text-align: left;
+                padding-top: 110px;
+            }
+
+            header h1 {
+                font-size: 2.4rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .floating-whatsapp {
+                font-size: 0.8rem;
+                padding: 10px 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <div class="nav-logo">
+                <span class="nav-logo-main">RAJKAMAL</span>
+                <span class="nav-logo-sub">by DULHA DULHAN</span>
+            </div>
+            <div class="nav-links">
+                <a href="#categories">Collections</a>
+                <a href="#featured">Featured</a>
+                <a href="#services">Services</a>
+                <a href="#visit">Visit Store</a>
+            </div>
+            <a href="https://wa.me/91XXXXXXXXXX?text=Hello%20Rajkamal%20team,%20I%20have%20an%20inquiry."
+                target="_blank" class="nav-cta">
+                WhatsApp
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero-content">
+            <div>
+                <div class="hero-text-eyebrow">Exclusive Designer Wear • Men & Women</div>
+                <h1>Timeless Indian Couture</h1>
+                <div class="hero-subbrand">RAJKAMAL • BY DULHA DULHAN</div>
+                <p class="hero-description">
+                    Curated sherwanis, bridal lehengas, sarees and occasion wear for weddings, sangeet, reception and
+                    every celebration in between. Premium fabrics, detailed handwork, and made-for-you fits.
+                </p>
+
+                <div class="hero-badges">
+                    <span class="hero-badge">Custom Tailoring</span>
+                    <span class="hero-badge">Bridal & Groom Styling</span>
+                    <span class="hero-badge">Store in Vadodara</span>
+                </div>
+
+                <div class="hero-actions">
+                    <a href="#featured" class="btn-primary">Browse Featured Looks</a>
+                    <a href="#categories" class="btn-outline">Shop Men / Women</a>
+                    <a href="#visit" class="btn-outline">Visit Our Store</a>
+                </div>
+            </div>
+
+            <div class="hero-side-panel">
+                <h3>By Appointment or Walk-in</h3>
+                <ul class="hero-list">
+                    <li>✔ Bridal & groom consultation</li>
+                    <li>✔ Custom size and alterations</li>
+                    <li>✔ Coordinated family outfits</li>
+                    <li>✔ Wedding, engagement & festive collections</li>
+                </ul>
+                <div class="hero-note">
+                    Share your event date and style on WhatsApp – we’ll suggest looks before you even visit.
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- CATEGORIES -->
+        <section id="categories" class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <p class="section-subtitle">
+                Complete wardrobe for men and women – from grand wedding ensembles to subtle festive wear.
+            </p>
+
+            <div class="category-grid">
+                <div class="category-card">
+                    <div>
+                        <div class="category-label">Men</div>
+                        <div class="category-name">Sherwanis & Indo-Western</div>
+                        <div class="category-desc">
+                            Classic, royal and contemporary silhouettes for groom, groomsmen and family.
+                        </div>
+                    </div>
+                    <div class="category-meta">
+                        Sherwanis • Bandhgalas • Kurta Sets • Jackets
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div>
+                        <div class="category-label">Women</div>
+                        <div class="category-name">Lehengas, Sarees & Gowns</div>
+                        <div class="category-desc">
+                            Handworked bridal lehengas, designer sarees and fusion gowns for every ceremony.
+                        </div>
+                    </div>
+                    <div class="category-meta">
+                        Bridal • Bridesmaids • Festive • Reception
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div>
+                        <div class="category-label">Occasion</div>
+                        <div class="category-name">Family & Trousseau</div>
+                        <div class="category-desc">
+                            Coordinated outfits and ready trousseau options for the complete wedding story.
+                        </div>
+                    </div>
+                    <div class="category-meta">
+                        Matching Sets • Light Festive • Gifts
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY RAJKAMAL -->
+        <section class="container">
+            <div class="features-strip">
+                <div class="feature-item">
+                    <div class="feature-title">Curated Designer Pieces</div>
+                    Handpicked silhouettes with detailed hand-embroidery, zardozi, sequins and heritage craft.
+                </div>
+                <div class="feature-item">
+                    <div class="feature-title">Perfect Fit Promise</div>
+                    In-store alterations and made-to-measure options for a sharp, comfortable fit.
+                </div>
+                <div class="feature-item">
+                    <div class="feature-title">Wedding Wardrobe Planning</div>
+                    From roka to reception – we help style every look for bride, groom and families.
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED COLLECTION -->
+        <section id="featured" class="container">
+            <h2 class="section-title">Featured Collection</h2>
+            <p class="section-subtitle">
+                A glimpse into our signature pieces. Visit the store or WhatsApp us to explore full collections.
+            </p>
+
+            <div class="product-grid">
+                <!-- WOMEN 1 -->
+                <div class="product-item">
+                    <img src="image1_lehenga.jpg" alt="Regal Bridal Lehenga">
+                    <div class="product-details">
+                        <h3>The Imperial Bridal Lehenga</h3>
+                        <p>Velvet base with intricate zari, resham and hand-embroidered borders – designed for the
+                            wedding pheras.</p>
+                        <div class="product-meta">Price Range: $$$ &nbsp;|&nbsp; Custom blouse & dupatta styling.</div>
+                        <a href="https://wa.me/91XXXXXXXXXX?text=I%20am%20interested%20in%20The%20Imperial%20Bridal%20Lehenga%20from%20your%20website."
+                            target="_blank" class="btn-whatsapp">WhatsApp for Details</a>
+                    </div>
+                </div>
+
+                <!-- MEN 1 -->
+                <div class="product-item">
+                    <img src="image2_sherwani.jpg" alt="Classic Groom Sherwani">
+                    <div class="product-details">
+                        <h3>The Classic Groom Sherwani</h3>
+                        <p>Textured silk sherwani with subtle embroidery, paired with churidar and stole.</p>
+                        <div class="product-meta">Price Range: $$ &nbsp;|&nbsp; Custom tailoring available.</div>
+                        <a href="https://wa.me/91XXXXXXXXXX?text=I%20am%20interested%20in%20The%20Classic%20Groom%20Sherwani%20from%20your%20website."
+                            target="_blank" class="btn-whatsapp">Book Fitting Slot</a>
+                    </div>
+                </div>
+
+                <!-- WOMEN 2 -->
+                <div class="product-item">
+                    <img src="image3_saree.jpg" alt="Designer Saree">
+                    <div class="product-details">
+                        <h3>Designer Statement Saree</h3>
+                        <p>Lightweight drape with contemporary pallu detailing – perfect for cocktail and reception.</p>
+                        <div class="product-meta">Price Range: $ &nbsp;|&nbsp; Blouse customization available.</div>
+                        <a href="https://wa.me/91XXXXXXXXXX?text=I%20am%20interested%20in%20the%20Designer%20Saree%20from%20your%20website."
+                            target="_blank" class="btn-whatsapp">Check Availability</a>
+                    </div>
+                </div>
+
+                <!-- MEN 2 -->
+                <div class="product-item">
+                    <img src="image4_kurta.jpg" alt="Festive Kurta Set">
+                    <div class="product-details">
+                        <h3>Festive Kurta Set</h3>
+                        <p>Comfortable cotton-silk kurta with minimal detailing for mehendi and smaller functions.</p>
+                        <div class="product-meta">Price Range: $ &nbsp;|&nbsp; Multiple colours & sizes.</div>
+                        <a href="https://wa.me/91XXXXXXXXXX?text=I%20am%20interested%20in%20the%20Festive%20Kurta%20Set%20from%20your%20website."
+                            target="_blank" class="btn-whatsapp">View Colour Options</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section id="services" class="container">
+            <h2 class="section-title">In-Store Services</h2>
+            <p class="section-subtitle">
+                Not just outfits – we help design your entire wedding and festive look.
+            </p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-title">Bridal & Groom Consultation</div>
+                    <div class="service-desc">
+                        Dedicated styling for bride and groom to plan outfits for each ceremony as per theme, venue and
+                        comfort.
+                    </div>
+                    <div class="service-note">
+                        Best booked at least 60–90 days before the wedding date.
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-title">Custom Fitting & Alterations</div>
+                    <div class="service-desc">
+                        From length and waist adjustments to sleeve and neck tweaks – we ensure each piece fits you
+                        right.
+                    </div>
+                    <div class="service-note">
+                        Basic alterations often included with purchase. Ask in-store for details.
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-title">Family & Group Styling</div>
+                    <div class="service-desc">
+                        Coordinated yet individual looks for family, bridesmaids, groomsmen and relatives across events.
+                    </div>
+                    <div class="service-note">
+                        Share family pictures on WhatsApp – we’ll suggest options beforehand.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section class="container testimonials">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-subtitle">
+                Real weddings, real celebrations – styled at Rajkamal.
+            </p>
+
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        “They handled my bridal lehenga and my husband’s sherwani together – colours, fit, everything
+                        matched perfectly.”
+                    </div>
+                    <div class="testimonial-name">Priya & Arjun</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        “For every function they had a different look ready – from simple mehendi kurta to grand
+                        reception outfit.”
+                    </div>
+                    <div class="testimonial-name">Mehta Family</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        “Good range for budgets – you get both heavy designer pieces and subtle, classy festive wear.”
+                    </div>
+                    <div class="testimonial-name">Rohan</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY / INSTAGRAM STRIP -->
+        <section class="container gallery-strip">
+            <h2 class="section-title">From Our Store & Shoots</h2>
+            <p class="section-subtitle">
+                Replace these blocks with your shoot images, trial room pictures or Instagram feed.
+            </p>
+
+            <div class="gallery-row">
+                <div class="gallery-tile">
+                    <span>Bridal Trial</span>
+                </div>
+                <div class="gallery-tile">
+                    <span>Groom Edit</span>
+                </div>
+                <div class="gallery-tile">
+                    <span>Lehenga Details</span>
+                </div>
+                <div class="gallery-tile">
+                    <span>Store Corner</span>
+                </div>
+                <div class="gallery-tile">
+                    <span>Family Look</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/91XXXXXXXXXX?text=Hello%20Rajkamal%20team,%20I%20saw%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20collections."
+        class="floating-whatsapp" target="_blank">
+        <span class="whatsapp-icon"></span>CHAT NOW
+    </a>
+
+    <!-- FOOTER -->
+    <footer id="visit">
+        <div class="container footer-grid">
+
+            <div class="contact-info">
+                <h3>CONTACT & LOCATION</h3>
+                <p><strong>Address:</strong> [Your Full Shop Address Here, Example: 101 Royal Plaza, MG Road, Vadodara,
+                    Gujarat]</p>
+                <p><strong>Phone:</strong> <a href="tel:+91XXXXXXXXXX">+91 XXXXXXXXXX</a></p>
+                <p><strong>E-mail:</strong> <a href="mailto:info@rajkamal.com">info@rajkamal.com</a></p>
+                <p><strong>Store Hours:</strong> [Example: Mon–Sat, 11:00 AM – 8:00 PM]</p>
+                <p><strong>Instagram:</strong> <a href="#" target="_blank">@rajkamal.dulhadulhan</a></p>
+            </div>
+
+            <div class="map-section">
+                <h3>VISIT OUR STORE</h3>
+                <p style="font-size:0.85rem; color:#aaa; margin-bottom:8px;">
+                    Tap for directions or start WhatsApp chat to share your arrival time.
+                </p>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123456.7890!2d72.5000!3d23.0000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDQ5JzAxLjEiTiA3MsKwNTUnNTkuMyJF!5e0!3m2!1sen!2sin!4v1678888888888"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                    <a href="https://maps.app.goo.gl/YourShopLocationLink" target="_blank" class="btn-primary"
+                        style="margin-top: 14px; display:inline-block;">
+                        Get Directions
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            © <span id="year"></span> Rajkamal by Dulha Dulhan • All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Simple current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
